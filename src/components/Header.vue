@@ -50,7 +50,6 @@ export default {
 <style lang="scss">
 .container {
   display: flex;
-  width: 70%;
   margin: auto;
   justify-content: space-around;
   padding-bottom: 20px;
