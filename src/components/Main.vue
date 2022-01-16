@@ -3,9 +3,13 @@
     <dir class="jumbo_container">
       <img class="jumbotron" src="../assets/img/jumbotron.jpg" alt="" />
     </dir>
-    <div class="slide container" :key="index" v-for="(comic, index) in comics">
-      <p>prova</p>
-       {{ comic.thumb[index] }}
+    <div class="container comic_container">
+      <div class="comic" 
+      :key="index"
+      v-for="(comic, index) in comics" >
+      <img :src="comic.thumb" alt="">
+      <h3>{{ comic.series }}</h3>
+      </div>
     </div>
   </div>
 </template>
@@ -95,6 +99,10 @@ export default {
 </script>
 
 <style lang="scss">
+h3 {
+  color: white;
+}
+
 .jumbo_container {
   margin: 0;
   padding: 0;
@@ -107,10 +115,12 @@ export default {
   object-position: top;
 }
 
-.slide {
+.comic_container {
   display: flex;
   flex-wrap: wrap;
   background-color: black;
-  height: 800px;
+  
+  padding: 100px;
+
 }
 </style>
