@@ -3,27 +3,30 @@
     <dir class="jumbo_container">
       <img class="jumbotron" src="../assets/img/jumbotron.jpg" alt="" />
     </dir>
-    <div class="container comic_container">
-      <Cards 
-      :key="index" 
-      v-for="(comic, index) in comics"
-      :src="comic.thumb"
-      :titolo="comic.series"
-      />
-      <!-- <div class="comic" :key="index" v-for="(comic, index) in comics">
+    <div class="main">
+      <div class="comic_container">
+        <Cards
+          class="comic"
+          :key="index"
+          v-for="(comic, index) in comics"
+          :src="comic.thumb"
+          :titolo="comic.series"
+        />
+        <!-- <div class="comic" :key="index" v-for="(comic, index) in comics">
         <img :src="comic.thumb" alt="" />
         <h3>{{ comic.series }}</h3>
       </div> -->
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Cards from "./Cards.vue"
+import Cards from "./Cards.vue";
 export default {
   name: "Main",
   components: {
-    Cards
+    Cards,
   },
   data() {
     return {
@@ -135,13 +138,17 @@ h3 {
   object-position: top;
 }
 
+.main {
+  background-color: black;
+}
 .comic_container {
   display: flex;
   flex-wrap: wrap;
-  background-color: black;
+  width: 70%;
+  margin: auto;
   padding: 100px;
   .comic {
-    flex-basis: calc(100% / 6);
+    flex-basis: calc(100% /8);
   }
 }
 </style>

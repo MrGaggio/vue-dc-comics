@@ -51,6 +51,7 @@ export default {
 .container {
   display: flex;
   margin: auto;
+  width: 70%;
   justify-content: space-around;
   padding-bottom: 20px;
 }
